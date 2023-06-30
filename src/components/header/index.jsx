@@ -7,7 +7,6 @@ import Cart from "../cart/index";
 // Styles
 import * as Styles from "./styles";
 import { loginUser, logoutUser } from "../../redux/user/actios";
-import { useMemo } from "react";
 import { selectProductsCount } from "../../redux/cart/cart.selectors";
 
 function Header() {
@@ -16,6 +15,7 @@ function Header() {
     const { currentUser } = useSelector(
         (rootReducer) => rootReducer.userReducer
     );
+    
     const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
     const productsCount = useSelector(selectProductsCount);
 
